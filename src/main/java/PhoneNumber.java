@@ -25,7 +25,7 @@ public class PhoneNumber {
         String stringNumber = String.valueOf(buf).trim();
         if (stringNumber.matches("\\(\\d{3}\\)\\s\\d{3}(-)\\d{4}")){
             System.out.println(buf);
-        } else if (stringNumber.matches("\\d{3}\\s\\d{3}\\s\\d{4}")) {
+        } else if (stringNumber.matches("\\d{3}-\\d{3}-\\d{4}")) {
             System.out.println(buf);
         }
     }
