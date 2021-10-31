@@ -6,7 +6,7 @@ import java.util.HashMap;
 public class SortedWords {
     public String readFile() {
         String text = null;
-        try (FileReader reader = new FileReader("C:\\Users\\Igor\\IdeaProjects\\GoIT\\HW-9_\\src\\main\\java\\words.txt")) {
+        try (FileReader reader = new FileReader("src/main/java/resources/words.txt")) {
             char[] buf = new char[1024];
             int c;
             while ((c = reader.read(buf)) > 0) {

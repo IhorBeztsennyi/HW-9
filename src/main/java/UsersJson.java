@@ -9,7 +9,7 @@ public class UsersJson {
 
     public ArrayList<String> readFile() {
         ArrayList<String> lines = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Igor\\IdeaProjects\\GoIT\\HW-9\\src\\academy\\learnprogramming\\file2.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("src/main/java/resources/file2.txt"))) {
             String sCurrentLine;
             while ((sCurrentLine = br.readLine()) != null) {
                 lines.add(sCurrentLine);
@@ -32,7 +32,7 @@ public class UsersJson {
         return usersList;
     }
 
-    File userJson = new File("C:\\Users\\Igor\\IdeaProjects\\GoIT\\HW-9_\\src\\main\\java\\user.json");
+    File userJson = new File("src/main/java/resources/user.json");
 
     public void jsonObjectCreation() {
         List<User> usersList = usersObjectCreation();
