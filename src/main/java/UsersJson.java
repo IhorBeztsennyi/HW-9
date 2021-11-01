@@ -36,16 +36,12 @@ public class UsersJson {
 
     public void jsonObjectCreation() {
         List<User> usersList = usersObjectCreation();
-        for (User tempUser : usersList) {
+        try (FileWriter writer = new FileWriter(userJson, true)) {
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            String json = gson.toJson(tempUser);
-            System.out.println(json);
-            try (FileWriter writer = new FileWriter(userJson, true)) {
-                writer.write(json);
-                writer.flush();
-            } catch (IOException e) {
-                System.out.println(e.getMessage());
-            }
+            gson.toJson(usersList, writer);
+            System.out.println(gson.toJson(usersList));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -55,22 +51,6 @@ public class UsersJson {
 
         public User(String name, String age) {
             this.name = name;
-            this.age = age;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getAge() {
-            return age;
-        }
-
-        public void setAge(String age) {
             this.age = age;
         }
     }

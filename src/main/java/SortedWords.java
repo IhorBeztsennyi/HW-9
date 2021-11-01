@@ -4,13 +4,14 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 public class SortedWords {
+    public static final int CHAR_SIZE = 1024;
     public String readFile() {
         String text = null;
         try (FileReader reader = new FileReader("src/main/java/resources/words.txt")) {
-            char[] buf = new char[1024];
+            char[] buf = new char[CHAR_SIZE];
             int c;
             while ((c = reader.read(buf)) > 0) {
-                if (c < 1024) {
+                if (c < CHAR_SIZE) {
                     buf = Arrays.copyOf(buf, c);
                 }
                 StringBuilder result = new StringBuilder();
